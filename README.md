@@ -36,7 +36,7 @@ app.listen(port, () => {
 ```
 
 ```bash
-$ node app.js
+$ node index.js
 ```
 
 # Second class content
