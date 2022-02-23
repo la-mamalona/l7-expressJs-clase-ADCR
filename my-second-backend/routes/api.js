@@ -5,6 +5,7 @@ const myArtistController = require('../controllers/artistController');
 const myAlbumController = require('../controllers/albumController');
 
 // Songs
+myRouter.get('/song/:idSong', mySongController.getSongDetail);
 myRouter.get('/song', mySongController.getAllSongs);
 myRouter.post('/song', mySongController.createSong);
 myRouter.delete('/song', mySongController.deleteSong);

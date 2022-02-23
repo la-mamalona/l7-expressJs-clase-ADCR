@@ -1,4 +1,26 @@
-let songCollection = [{name:"Around the world"},{name:"Dancing queen"},{name:"Los mensajes del WA"}];
+let songCollection = [
+  {
+    id: "a11s2",
+    name:"Around the world"
+  },
+  {
+    id: "qw22",
+    name:"Dancing queen"
+  },
+  {
+    id: "yc22",
+    name:"Los mensajes del WA"
+  }
+];
+
+exports.getSongDetail=[
+  (req, res)=>{
+    console.log(req.params);
+    let songFound = songCollection.filter((elem)=>{return elem.id == req.params.idSong})
+    songFound = songFound.length ? songFound[0] : {message: "Not found"};
+    return res.status(200).json(songFound);
+  }
+];
 
 exports.getAllSongs=[
   (request, response)=>{
